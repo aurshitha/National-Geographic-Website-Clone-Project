@@ -10,3 +10,6 @@ This project is a responsive and dynamic front-end clone of the National Geograp
 **Improved User Experience:** Focuses on delivering a smooth and intuitive browsing experience.
 **Interactive Animations:** Includes images and animations to enhance user interactivity.
 **Environmental Awareness:** Aims to raise awareness about important topics such as the environment, nature, and climate change.
+
+
+**Still on Progress !!!**
