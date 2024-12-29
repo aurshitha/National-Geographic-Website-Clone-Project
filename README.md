@@ -11,7 +11,7 @@ This project recreates the essence of the National Geographic website with a foc
 **User-Friendly Interface:** Offers smooth navigation and an intuitive browsing experience.
 **Interactive Animations:** Brings the site to life with engaging animations and visuals.
 
-**Future Enhancements**
+# **Future Enhancements**
 
 Features like optimized search results, improved user experience, and advanced interactive animations.
 Aimed at further raising awareness about the environment, nature, and climate change.
