@@ -6,10 +6,10 @@ This project is a responsive and dynamic front-end clone of the National Geograp
 
 **Features:**
 **Responsive Design:** The website adapts seamlessly to different screen sizes, ensuring a consistent experience across devices.
-**Enhanced Search Functionality:** Provides more optimized search results, making it easier for users to find relevant content.
+**Search Functionality:** Provides search results, making it easier for users to find relevant content.
 **Improved User Experience:** Focuses on delivering a smooth and intuitive browsing experience.
 **Interactive Animations:** Includes images and animations to enhance user interactivity.
-**Environmental Awareness:** Aims to raise awareness about important topics such as the environment, nature, and climate change.
 
 
-**Still on Progress !!!**
+
+
