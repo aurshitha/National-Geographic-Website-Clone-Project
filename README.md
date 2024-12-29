@@ -7,11 +7,8 @@ This project recreates the essence of the National Geographic website with a foc
 **Key Features:**
 
 **Responsive Design:** Adapts effortlessly to various screen sizes for a consistent experience on all devices.
-
 **Enhanced Search Functionality:** Allows users to quickly find relevant content.
-
 **User-Friendly Interface:** Offers smooth navigation and an intuitive browsing experience.
-
 **Interactive Animations:** Brings the site to life with engaging animations and visuals.
 
 # **Future Enhancements**
