@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g=="crossorigin="anonymous" />-->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <title>National Geographic</title>
+        <link rel="icon" href="Images/favicon.jpg" type="image/x-icon">
+        <link rel="shortcut icon" href="Images/favicon.jpg" type="image/x-icon">
+
+        <link rel="stylesheet" href="sample.css">
+        <script src="sample.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="logo-content">
+                    <a href = "#"><img src= "Images/logo.jpg" alt="logo" width="150px" height="62px"></a>
+                </div>
+                <div class="menu-content">
+                    <ul class="navbar-list">
+                        <li class="navbar-list-item">
+                            <div class="userMenu">
+                                <button class="UserMenu__Link" tabindex="0" onclick="window.location='login.html';">LOGIN</button>
+                            </div>
+                        </li>
+                        <li class="navbar-list-item">
+                            <div class="globalNav">
+                                <!---Search icon-->
+                                <a href="#" class="search-defalut-button" id="searchIcon" onclick="toggleSearch()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                  </svg></a>
+                            </div>
+                        </li>
+                        <li class="navbar-list-item">
+                            <div class="globalNav">
+                                <a href="" class="globalNav__Link">Newletters</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <span style="font-size:30px; cursor:pointer; padding:6px;" class="menu-toggle"  onclick="toggleNav()">&#9776;</span>
+                </div>
+            </div>
+        </header>
+
+
+        <!--Search Engine-->
+        <div class="Search-Overlay" id="Search-overlay-show">
+
+            <header class="lightbox-header-flex">
+                <button class="Search-close-btn" title="Toggle Section" onclick="toggleMain()">
+                    <div class="lightbox-closebtn-wrap-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                        </svg>
+                    </div>
+                </button>
+            </header>
+
+            <div class="responsive-search-wrapper">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <div>
+                            <div id="natgeo-search-input" class="searchModule">
+                                <div class="SearchBar">
+                                    <form role="search" action="#" class="flexliable"> <!---flex-no-shrink flex-grow items-center flex-row-reverse justifiy-end-->
+                                        <input type="text" class="SearchBar-input" placeholder="SEARCH" name="search">
+                                        <button type="submit" class="SearchBar-button" aria-label="Search">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                            </svg>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="natgeo-search-results">
+                                <div class="responsive-search-wrapper">
+                                    <div class="search-layout" role="main" tabindex="-1">
+                                        <div class="term-list-layout">
+                                            <h1 class="Term-list-title">POPULAR SEARCHES</h1>
+                                            <ul class="Term-list">
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">animals</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">climate change</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">space</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">India</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">oceans</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">sharks</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">coronavirus</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">dinosaurs</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">birds</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">history</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">panda</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">earthquakes</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">volcano</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">science</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">deforestation</a>
+                                                </li>
+                                                <li class="Term-list-item">
+                                                    <a href="#" class="AnchorLink-term-list">lions</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      <!---->  <section class="lightbox-content-Box" id="lightbox-content-show">
+            <div id="background-img-display"></div>
+            <header class="lightbox-header-flex">
+                <button class="lightbox-closebtn" title="Toggle Section" onclick="toggleSection()">
+                    <div class="lightbox-closebtn-wrap-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z"/>
+                            <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+                        </svg>
+                    </div>
+                </button>
+            </header>
+
+           
+            <div class="lightbox-content-dark-Box">
+                <div class="menu-header"></div>
+                
+                <div class="menu-Body">
+                    <div class="menu-content">
+                        <div class="menu-content-left">
+                            <h2 class="menu-category">
+                                TOPICS -
+                            </h2>
+
+                            <ul class="menu-content-list-topics" id="menu-content-left-list-topics-flex">
+                                <li class="menu-content-list-item" data-bg-img="./Images/nav-animal.jpg">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" id="menu-animal" href="#">ANIMALS</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item" data-bg-img="./Images/nav-environment.jpg">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" id="menu-environment" href="#">ENVIRONMENT</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item" data-bg-img="./Images/nav-history.jpg">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" id="menu-history" href="#">HISTORY & CULTURE</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item" data-bg-img="./Images/nav-science.jpg">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" id="menu-science" href="#">SCIENCE</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item" data-bg-img="./Images/nav-travel.jpg">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" id="menu-travel" href="#">TRAVEL</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-content-right" id="menu-content-left-list-sites-flex">
+                            <h2 class="menu-category">SITES -</h2>
+
+                            <ul class="menu-content-list-sites">
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="https://www.natgeotv.com/" style="font-size: 26px;">Watch TV!</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="#" style="font-size: 26px;">Read the Magazine</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="#" style="font-size: 26px;">Visit NAT GEO Family</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="https://www.nationalgeographic.com/expeditions/" style="font-size: 26px;">Book A Trip</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="#" style="font-size: 26px;">Listen To Podcasts</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item"  href="#" style="font-size: 26px;">Shop NAT GEO</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="#" style="font-size: 26px;">Attend A Live Event</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="#" style="font-size: 26px;">Learn About Impact</a>
+                                    </div>
+                                </li>
+
+                                <li class="menu-content-list-item">
+                                    <div class="globalNav-interaction">
+                                        <a class="anchorLink-menu-content-list-item" href="#" style="font-size: 26px;">Support Our Mission</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--main content-->
+        <div class = "homepage">
+            <div class = "homepage-container">
+                <div class = "homepage-content">
+                    <div class = "homepage-top-content">
+                        <div class="homepeage-heading">
+                            <h1>Latest Stories</h1>
+                        </div>
+                        <div class="homepeage-p">
+                            <p class="general-p"><a href="#" class="a-link">Subscribe</a>
+                                for full access to read stories from National Geographic.</p>
+                        </div>
+                        <p class="bar-1">
+                    </div>
+                </div>
+
+                <div class="card-cart-section">
+                    <div class="card-area">
+                        <div class="list-card-area">
+                            <div class="top-title-container">
+                                <div class="top-title">
+                                    <h3>TODAY'S PICKS</h3>
+                                </div>
+                            </div>
+    
+                            <div class="list-card-flex-container">
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/covid.jpg" alt="" width="100px" height="auto">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Virus -</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Updates on brain eating ameoba</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/environment.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Nature</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Discover more about nature Maa!</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/animal front.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Wild Life</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Wandering wild aniamls around the world</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/science front.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Environment</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Things to know about plant life</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/science spaceX.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Space</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Things to know about plant life</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/nav-photography.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Sanctuary</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Things to know about plant life</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--1 phase done! -->
+                            </div>
+                        </div>
+                        <div class="see-more-div">
+                            <a href="#" class="see-more-link" id="a1-link">See More</a>
+                        </div>
+                    </div>
+
+                    <div class="wide-cart">
+                        <div class="wide-card-area">
+                            <div class="wide-card-area-container">
+                                <div class="wide-area-img-container">
+                                    <img src="./Images/nav-environment.jpg" alt="" class="wide-card-img-wrapper">
+                                </div>
+                                <div class="wide-card-content-container">
+                                    <div class="wide-card-category">
+                                        <span><a href="#" class="wide-card-link-one wide-card-link">SCIENCE</a></span> 
+                                        <span><a href="#" class="wide-card-link wide-card-link-two">CORONAVIRUS COVERAGE</a></span>
+                                    </div>
+        
+                                    <div class="wide-card-description-container">
+                                        <h1>Exclusive : Kids catch and spread coronvirus half as much as adults,Iceland Icerland
+                                            Study confirms</h1>
+                                    </div>
+        
+                                    <div class="read-container">
+                                        <span><a href="#" class="a-cw">READ MORE</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="tall-cart">
+                            <div class="tall-card-area-one-tall-card-area">
+                                <div class="tall-card-flex-container">
+                                    <div class="tall-card-image-wrapper">
+                                        <img src="./Images/tall1.jpg" alt="">
+                                    </div>
+                                   <div class="tall-card-content">
+                                        <div class="tall-card-category">
+                                            <a href="#" class="">
+                                                <h3>ENVIROMENT</h3>
+                                            </a>
+                                        </div>
+                                        <div class="tall-card-content">
+                                            <h3>How one city plans to recover fromlosing most of its tree</h3>
+                                        </div>
+            
+                                        <div class="read-container">
+                                            <span><a href="#" class="a-cw">READ</a></span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="tall-card-area-one-tall-card-area">
+                                <div class="tall-card-flex-container">
+                                    <div class="tall-card-image-wrapper">
+                                        <img src="./Images/tall2.jpg" alt="">
+                                    </div>
+                                    <div class="tall-card-content">
+                                        <div class="tall-card-category">
+                                            <a href="" class="">
+                                                <h3>History</h3>
+                                            </a>
+                                        </div>
+                                        <div class="tall-card-content">
+                                            <h3>This religion revolt nearly topped China's last imperial dynasty</h3>
+                                        </div>
+            
+                                        <div class="read-container">
+                                            <span><a href="" class="a-cw">READ</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!--tall-cart-->
+        
+                    </div> <!--wide-cart-page-->
+            
+                </div> <!--card-cart-section-->
+
+            </div> <!--homepage-container-->
+        </div> <!--homepage-->
+        
+
+        <!--First Section-->
+        <!--1. 
+            2.
+            3.
+            4.
+            5.
+            6.
+            -->
+           <!-- Places Section -->
+    <section class="places-section">
+        <div class="place-lightbox">
+            <div class="places-container">
+                <h2 class="places-heading">Discover Stunning Places</h2>
+            </div>
+            <h4 class="bar"></h4>
+            <div class="places-grid">
+                <!-- Slide 1 -->
+                <div class="place-slide">
+                    <div class="place-image" style="background-image: url('Images/place3.jpg');">
+                        <div class="place-overlay">
+                            <h3 class="place-title">SOUTH KOREA</h3>
+                            <h4 class="bar"></h4>
+                            <p class="place-description">South Korea is an extraordinary country filled with beautiful beaches, 
+                                <br>thriving cities, ancient temples, remarkable natural scenery and 
+                                <br>most importantly, friendly people.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="place-slide">
+                    <div class="place-image" style="background-image: url('Images/place2.jpg');">
+                        <div class="place-overlay">
+                            <h3 class="place-title">PERU</h3>
+                            <h4 class="bar"></h4>
+                            <p class="place-description"> The earliest inhabitants arrived there about 15,000 years ago.
+                                <br>Peru is a country of great diversity, with a wide range of landscapes and
+                                <br> climates, from the arid Pacific coastal region in the west to the peaks of
+                                <br>the Andes mountains in the east.
+                            </p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Slide 3-->
+                <div class="place-slide">
+                    <div class="place-image" style="background-image: url('Images/place1.jpg');">
+                        <div class="place-overlay">
+                            <h3 class="place-title">THE GREAT WALL - CHINA</h3>
+                            <h4 class="bar"></h4>
+                            <p class="place-description">The Great Wall reflects collision and exchanges 
+                                <br>between agricultural civilizations and nomadic civilizations 
+                                <br>in ancient China.
+                            </p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <button class="prev-slide" onclick="prevSlide()">&#10094;</button>
+            <button class="next-slide" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+
+
+        <!-- Photo Galleries Section -->
+        <section class="photo-galleries">
+            <div class="photo-section-lightbox">
+                <div class="photo-section-title">
+                    <h2 class="photo-section-heading">PHOTO GALLERY</h2>
+                </div>
+                <div class="photo-section-img">
+                    <div class="row">
+                        <div class="column">
+                            <img src="Images/photo1.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo2.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo3.jpg" alt="Nature" style="width:100%">
+                        </div>
+                        <div class="column">
+                            <img src="Images/photo4.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo5.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo6.jpg" alt="Nature" style="width:100%">
+                        </div>  
+                        <div class="column">
+                            <img src="Images/photo7.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo8.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo9.jpg" alt="Nature" style="width:100%">
+                        </div>
+                        <div class="column">
+                            <img src="Images/photo10.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo11.jpg" alt="Nature" style="width:100%">
+                            <img src="Images/photo12.jpg" alt="Nature" style="width:100%">
+                        </div>
+                    </div>
+                </div>
+                <div class="load-more-container">
+                    <button class="load-more-button">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <div class = "homepage">
+            <div class = "homepage-container">
+                <div class = "homepage-content">
+                    <div class = "homepage-top-content">
+                        <div class="homepeage-heading">
+                            <h1>Travel</h1>
+                        </div>
+                        <div class="homepeage-p">
+                            <p class="general-p"><a href="#" class="a-link">Subscribe</a>
+                                for full access to read stories from National Geographic.</p>
+                        </div>
+                        <p class="bar-1">
+                    </div>
+                </div>
+
+                <div class="card-cart-section">
+                    <div class="card-area">
+                        <div class="list-card-area">
+                            <div class="top-title-container">
+                                <div class="top-title">
+                                    <h3>TODAY'S PICKS</h3>
+                                </div>
+                            </div>
+    
+                            <div class="list-card-flex-container">
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/covid.jpg" alt="" width="100px" height="auto">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Virus -</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">How to photograph the stars</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/environment.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Nature</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">See the raw side of Madeira's landscapes</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/animal front.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Wild Life</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Want to learn how to surf? Here's where to do it</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/science front.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Environment</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Why winter is the perfect time to visit Japan</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/science spaceX.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Space</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">There's a real winter wonderland in Finland - here's how to visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="list-card">
+                                    <div class="img-container">
+                                        <img src="./Images/nav-photography.jpg" alt="" width="100px" height="100px">
+                                    </div>
+    
+                                    <div class="list-card-content">
+                                        <div class="list-card-title">
+                                            <span>
+                                                <a href="#" class="list-card-link">Sanctuary</a>
+                                            </span>
+                                        </div>
+                                        <div class="list-card-subtitle">
+                                            <a href="">Discover the Wonders of the Ocean</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--1 phase done! -->
+                            </div>
+                        </div>
+                        <div class="see-more-div">
+                            <a href="#" class="see-more-link" id="a1-link">See More</a>
+                        </div>
+                    </div>
+
+                    <div class="wide-cart">
+                        <div class="wide-card-area">
+                            <div class="wide-card-area-container">
+                                <div class="wide-area-img-container">
+                                    <img src="https://i.pinimg.com/736x/4b/e7/12/4be712aa08d28d0bb30886d2295621b1.jpg" alt="" class="wide-card-img-wrapper">
+                                </div>
+                                <div class="wide-card-content-container">
+                                    <div class="wide-card-category">
+                                        <span><a href="#" class="wide-card-link-one wide-card-link">Travel</a></span> 
+                                        <span><a href="#" class="wide-card-link wide-card-link-two">VIEW TRIPS</a></span>
+                                    </div>
+        
+                                    <div class="wide-card-description-container">
+                                        <h1>Experience Legendary Places</h1>
+                                    </div>
+        
+                                    <div class="read-container">
+                                        <span><a href="#" class="a-cw">READ MORE</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="tall-cart">
+                            <div class="tall-card-area-one-tall-card-area">
+                                <div class="tall-card-flex-container">
+                                    <div class="tall-card-image-wrapper">
+                                        <img src="https://i.pinimg.com/736x/10/11/fd/1011fdb60e24e1a3403eda63ad62d472.jpg" alt="">
+                                    </div>
+                                   <div class="tall-card-content">
+                                        <div class="tall-card-category">
+                                            <a href="#" class="">
+                                                <h3>Ocean</h3>
+                                            </a>
+                                        </div>
+                                        <div class="tall-card-content">
+                                            <h3>Discover the Wonders of the Ocean</h3>
+                                        </div>
+            
+                                        <div class="read-container">
+                                            <span><a href="#" class="a-cw">READ</a></span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="tall-card-area-one-tall-card-area">
+                                <div class="tall-card-flex-container">
+                                    <div class="tall-card-image-wrapper">
+                                        <img src="https://i.pinimg.com/736x/09/99/bd/0999bd11398c6af84fd70ae52078de30.jpg" alt="">
+                                    </div>
+                                    <div class="tall-card-content">
+                                        <div class="tall-card-category">
+                                            <a href="" class="">
+                                                <h3>Places</h3>
+                                            </a>
+                                        </div>
+                                        <div class="tall-card-content">
+                                            <h3>See Europe from a New Perspective</h3>
+                                        </div>
+            
+                                        <div class="read-container">
+                                            <span><a href="" class="a-cw">READ</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!--tall-cart-->
+        
+                    </div> <!--wide-cart-page-->
+            
+                </div> <!--card-cart-section-->
+
+            </div> <!--homepage-container-->
+        </div>
+
+    <!--    <section class="donate-section">
+            <div class="donate-lightbox">
+                <div class="donate-container">
+                    <div class="donate-image">
+                        <img src="./Images/nav-animal.jpg" alt="Animal Image">
+                    </div>
+                    <div class="donate-content">
+                        <div class="donate-heading">
+                            <h2>Your Impact Begins Today</h2>
+                        </div>
+                        <div class="donate-description">
+                            <p class="donate-descp">Every donation counts and helps us to make a difference in the lives of animals in need.
+                                Our team works tirelessly to rescue, rehabilitate and rehome animals in distress.
+                                With your support, we can continue to provide vital care and services to those who need it most.
+                            </p>
+                        </div>
+                        <div class="donate-button">
+                            <a href="#">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   -->
+
+        <section class="donate-section">
+            <div class="donate-lightbox">
+                <div class="donate-background"></div>
+                <div class="donate-container">
+                    <div class="donate-content">
+                        <div class="donate-heading">
+                            <h2>Your Impact Begins Today</h2>
+                        </div>
+                        <div class="donate-description">
+                            <p>"Every donation counts and helps us to make a difference in the lives of animals in need.
+                                Our team works tirelessly to rescue, rehabilitate, and rehome animals in distress.
+                                With your support, we can continue to provide vital care and services to those who need it most."
+                            </p>
+                        </div>
+                        <div class="donate-button">
+                            <a href="#" onclick="window.location='donation.html';">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+
+
+
+    </body>    
+</html>
